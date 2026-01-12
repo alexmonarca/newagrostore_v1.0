@@ -11,6 +11,8 @@ import Contato from "./pages/Contato";
 import Cart from "./pages/Cart";
 import ProductDetail from "./pages/ProductDetail";
 import Account from "./pages/Account";
+import Login from "./pages/Login";
+import Registro from "./pages/Registro";
 
 function Router() {
   return (
@@ -22,6 +24,8 @@ function Router() {
       <Route path="/cart" component={Cart} />
       <Route path="/produto/:id" component={ProductDetail} />
       <Route path="/account" component={Account} />
+      <Route path="/login" component={Login} />
+      <Route path="/registro" component={Registro} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

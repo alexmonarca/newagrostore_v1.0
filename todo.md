@@ -129,10 +129,10 @@
 - [x] Adicionar ícone do Instagram
 
 ### Autenticação Supabase
-- [ ] Configurar credenciais do Supabase no projeto
-- [ ] Implementar login com email + senha
-- [ ] Implementar registro de novos usuários
-- [ ] Implementar logout
+- [x] Configurar credenciais do Supabase no projeto
+- [x] Implementar login com email + senha
+- [x] Implementar registro de novos usuários
+- [x] Implementar logout (hook pronto)
 - [ ] Proteger rotas que precisam de autenticação
 
 ### Banco de Dados Supabase

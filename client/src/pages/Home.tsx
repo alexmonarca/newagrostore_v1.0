@@ -43,8 +43,10 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/cart" className="relative">
-              <ShoppingCart className="w-6 h-6 text-foreground hover:text-accent transition cursor-pointer" />
+            <Link href="/login" className="text-sm text-foreground hover:text-accent transition">Entrar</Link>
+            <Link href="/registro" className="text-sm bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition">Registrar</Link>
+            <Link href="/cart" className="text-foreground hover:text-accent transition">
+              <ShoppingCart className="w-6 h-6" />
             </Link>
           </div>
         </div>
