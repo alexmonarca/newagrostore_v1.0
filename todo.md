@@ -81,3 +81,20 @@
 **Última Atualização:** Fase 7 - Interface de usuário implementada
 **Funcionalidades Completadas:** 30 de 40
 **Próximas Tarefas:** Testes, integração com pagamento, otimizações
+
+
+## Atualizações Recentes (Fase 8)
+
+### Identidade Visual
+- [x] Adicionar logo oficial da NEWagro ao header
+- [x] Atualizar cor verde para #02a75b em toda a paleta
+- [ ] Atualizar favicon com logo NEWagro
+- [x] Revisar contraste de cores com novo verde
+
+### Integração WooCommerce
+- [ ] Criar serviço de integração com WooCommerce REST API
+- [ ] Implementar autenticação com WooCommerce
+- [ ] Criar helpers para sincronizar produtos
+- [ ] Criar helpers para sincronizar estoque
+- [ ] Implementar webhook para atualizar pedidos
+- [ ] Testar fluxo completo: React → WooCommerce → DINTEC

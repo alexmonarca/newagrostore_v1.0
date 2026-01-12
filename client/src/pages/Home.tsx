@@ -53,11 +53,8 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">N</span>
-            </div>
-            <h1 className="text-2xl font-bold text-accent">NEWagro</h1>
+          <div className="flex items-center gap-3">
+            <img src="/logo-newagrostore.png" alt="NEWagro" className="h-12 w-auto" />
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
