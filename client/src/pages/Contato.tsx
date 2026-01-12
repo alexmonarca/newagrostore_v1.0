@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 
@@ -104,6 +104,21 @@ export default function Contato() {
                   São Borja - RS<br />
                   Brasil
                 </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Instagram className="w-5 h-5 text-accent" />
+                  Instagram
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Siga nosso trabalho nas redes</p>
+                <a href="https://instagram.com/newagrosb" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
+                  @newagrosb
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -284,8 +299,15 @@ export default function Contato() {
               <p className="text-sm opacity-75">São Borja - RS</p>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-sm opacity-75">
-            <p>&copy; 2026 NEWagro. Todos os direitos reservados.</p>
+          <div className="border-t border-white/10 pt-8">
+            <div className="flex justify-center gap-6 mb-6">
+              <a href="https://instagram.com/newagrosb" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition">
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
+            <div className="text-center text-sm opacity-75">
+              <p>&copy; 2026 NEWagro. Todos os direitos reservados.</p>
+            </div>
           </div>
         </div>
       </footer>

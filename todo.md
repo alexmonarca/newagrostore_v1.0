@@ -119,3 +119,26 @@
 - [ ] Implementar busca de produtos do WooCommerce
 - [ ] Preparar sincronização de estoque
 - [ ] Documentar endpoints esperados
+
+
+## Fase 10 - Integração Supabase e Autenticação
+
+### Redes Sociais
+- [x] Adicionar link Instagram @newagrosb na página Contato
+- [x] Adicionar link Instagram @newagrosb no rodapé
+- [x] Adicionar ícone do Instagram
+
+### Autenticação Supabase
+- [ ] Configurar credenciais do Supabase no projeto
+- [ ] Implementar login com email + senha
+- [ ] Implementar registro de novos usuários
+- [ ] Implementar logout
+- [ ] Proteger rotas que precisam de autenticação
+
+### Banco de Dados Supabase
+- [x] Criar tabelas de usuários (SQL script pronto)
+- [x] Criar tabelas de carrinho (SQL script pronto)
+- [x] Criar tabelas de favoritos (SQL script pronto)
+- [x] Criar tabelas de pedidos (SQL script pronto)
+- [x] Fornecer SQL scripts para o usuário (SUPABASE_SQL_SETUP.sql)
+- [x] Fornecer guia de integração (SUPABASE_INTEGRATION_GUIDE.md)
