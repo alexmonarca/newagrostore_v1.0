@@ -1,0 +1,83 @@
+# NEWagro Store - TODO
+
+## Funcionalidades Obrigatórias
+
+### Autenticação e Usuários
+- [x] Integração com Supabase para autenticação (via Manus OAuth)
+- [x] Sistema de login com email/senha
+- [x] Sistema de registro de novos usuários
+- [x] Sistema de logout
+- [ ] Recuperação de senha
+- [x] Proteção de rotas autenticadas
+
+### Catálogo de Produtos
+- [x] Schema de produtos no banco de dados
+- [x] Listagem de produtos com paginação
+- [ ] Busca de produtos por nome/descrição (estrutura pronta)
+- [x] Filtros por categoria
+- [ ] Filtros por faixa de preço
+- [ ] Ordenação (preço, popularidade, mais recentes)
+
+### Página de Detalhes do Produto
+- [x] Exibição de imagens do produto
+- [x] Descrição completa
+- [x] Especificações técnicas
+- [x] Preço e disponibilidade
+- [ ] Avaliações/comentários (futuro)
+- [x] Botão para adicionar ao carrinho
+- [x] Botão para adicionar aos favoritos
+
+### Carrinho de Compras
+- [x] Schema de carrinho no banco de dados
+- [x] Adicionar produtos ao carrinho
+- [x] Remover produtos do carrinho
+- [x] Atualizar quantidade de produtos
+- [x] Persistência do carrinho no banco
+- [x] Cálculo de subtotal e total
+- [x] Visualização do carrinho
+- [ ] Checkout (estrutura preparada para pagamento)
+
+### Lista de Favoritos
+- [x] Schema de favoritos no banco de dados
+- [x] Adicionar produtos aos favoritos
+- [x] Remover produtos dos favoritos
+- [x] Visualizar lista de favoritos
+- [x] Persistência no banco de dados
+- [x] Indicador visual de favoritos
+
+### Painel de Conta do Usuário
+- [x] Visualização de perfil do usuário
+- [ ] Edição de dados pessoais (requer backend adicional)
+- [x] Histórico de pedidos
+- [x] Detalhes de pedidos anteriores
+- [ ] Endereços salvos (estrutura pronta)
+- [ ] Preferências de conta
+
+### Design e UX
+- [x] Paleta de cores verde/terra (identidade agrícola)
+- [x] Layout responsivo (mobile, tablet, desktop)
+- [x] Navegação intuitiva
+- [x] Header com logo e menu
+- [x] Footer com informações
+- [x] Página inicial atrativa
+- [x] Componentes reutilizáveis (shadcn/ui)
+
+### Integrações Futuras
+- [x] Estrutura preparada para DINTEC Sistemas (gestão de estoque)
+- [x] Estrutura preparada para Stripe/sistema de pagamento
+- [ ] Documentação de API para integrações
+- [ ] Endpoints prontos para webhooks
+
+### Testes e Qualidade
+- [ ] Testes unitários com Vitest
+- [ ] Testes de autenticação
+- [ ] Testes de operações de carrinho
+- [ ] Testes de busca e filtros
+- [ ] Documentação técnica (em progresso)
+
+## Progresso
+
+**Status Geral:** Desenvolvimento em andamento
+**Última Atualização:** Fase 7 - Interface de usuário implementada
+**Funcionalidades Completadas:** 30 de 40
+**Próximas Tarefas:** Testes, integração com pagamento, otimizações

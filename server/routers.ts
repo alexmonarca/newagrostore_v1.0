@@ -1,10 +1,25 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, router, protectedProcedure } from "./_core/trpc";
+import { z } from "zod";
+import {
+  getProducts,
+  getProductById,
+  searchProducts,
+  getCartItems,
+  addToCart,
+  removeFromCart,
+  updateCartItemQuantity,
+  getFavorites,
+  addToFavorites,
+  removeFromFavorites,
+  getUserOrders,
+  getOrderById,
+  getOrderItems,
+} from "./db";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -17,12 +32,78 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  // Produtos
+  products: router({
+    list: publicProcedure.query(async () => {
+      return getProducts();
+    }),
+    getById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return getProductById(input.id);
+      }),
+    search: publicProcedure
+      .input(z.object({ query: z.string().optional(), category: z.string().optional() }))
+      .query(async ({ input }) => {
+        return searchProducts(input.query || "", input.category);
+      }),
+  }),
+
+  // Carrinho
+  cart: router({
+    list: protectedProcedure.query(async ({ ctx }) => {
+      return getCartItems(ctx.user.id);
+    }),
+    add: protectedProcedure
+      .input(z.object({ productId: z.number(), quantity: z.number().min(1) }))
+      .mutation(async ({ ctx, input }) => {
+        return addToCart(ctx.user.id, input.productId, input.quantity);
+      }),
+    remove: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ input }) => {
+        return removeFromCart(input.id);
+      }),
+    updateQuantity: protectedProcedure
+      .input(z.object({ id: z.number(), quantity: z.number().min(1) }))
+      .mutation(async ({ input }) => {
+        return updateCartItemQuantity(input.id, input.quantity);
+      }),
+  }),
+
+  // Favoritos
+  favorites: router({
+    list: protectedProcedure.query(async ({ ctx }) => {
+      return getFavorites(ctx.user.id);
+    }),
+    add: protectedProcedure
+      .input(z.object({ productId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        return addToFavorites(ctx.user.id, input.productId);
+      }),
+    remove: protectedProcedure
+      .input(z.object({ productId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        return removeFromFavorites(ctx.user.id, input.productId);
+      }),
+  }),
+
+  // Pedidos
+  orders: router({
+    list: protectedProcedure.query(async ({ ctx }) => {
+      return getUserOrders(ctx.user.id);
+    }),
+    getById: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        return getOrderById(input.id);
+      }),
+    getItems: protectedProcedure
+      .input(z.object({ orderId: z.number() }))
+      .query(async ({ input }) => {
+        return getOrderItems(input.orderId);
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
