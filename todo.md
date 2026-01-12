@@ -98,3 +98,24 @@
 - [ ] Criar helpers para sincronizar estoque
 - [ ] Implementar webhook para atualizar pedidos
 - [ ] Testar fluxo completo: React → WooCommerce → DINTEC
+
+
+## Fase 9 - Remoção de Autenticação e Novas Páginas
+
+### Autenticação
+- [x] Remover Manus OAuth de todas as rotas
+- [x] Remover proteção de rotas (publicar tudo)
+- [x] Remover hooks de autenticação
+- [x] Simplificar fluxo de carrinho (sem login)
+
+### Novas Páginas
+- [x] Criar página de Serviços
+- [x] Criar página Sobre
+- [x] Criar página Contato
+- [x] Atualizar navegação para linkar novas páginas
+
+### Integração WooCommerce
+- [ ] Criar serviço de integração com WooCommerce API
+- [ ] Implementar busca de produtos do WooCommerce
+- [ ] Preparar sincronização de estoque
+- [ ] Documentar endpoints esperados
