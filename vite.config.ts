@@ -24,6 +24,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-select'],
+          'vendor-trpc': ['@trpc/client', '@trpc/react-query'],
+          'vendor-supabase': ['@supabase/supabase-js'],
+        }
+      }
+    }
   },
   server: {
     host: true,
